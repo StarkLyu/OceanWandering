@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3664068561369279893}
   - component: {fileID: 3664068561369279892}
+  - component: {fileID: 4977298549298371556}
+  - component: {fileID: 7206624275538265246}
   m_Layer: 0
   m_Name: FishBasic
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4200605860186177672}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -43,12 +46,112 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2924206a0df58941b53e625b7416918, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  size: 1
+  fishType: 
   life: 100
   hunger: 10
-  speed: 5
-  turnSpeed: 30
-  floatSpeed: 3
-  verticalAngle: 30
-  verticalAdjustSpeed: 10
-  testTarget: {fileID: 0}
+  sight: 100
+  normalSpeed:
+    speed: 30
+    turnSpeed: 30
+    floatSpeed: 10
+    verticalAngle: 30
+    verticalAdjustSpeed: 10
+  fastSpeed:
+    speed: 50
+    turnSpeed: 40
+    floatSpeed: 20
+    verticalAngle: 30
+    verticalAdjustSpeed: 15
+  target: {fileID: 0}
   testChase: 0
+  testEscape: 0
+  sightSphere: {fileID: 3777044923764705115}
+  state: 0
+  direction: 0
+--- !u!135 &4977298549298371556
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664068561369279895}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &7206624275538265246
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3664068561369279895}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!1 &4428857489462682448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4200605860186177672}
+  - component: {fileID: 3777044923764705115}
+  - component: {fileID: 3499262657012714368}
+  m_Layer: 0
+  m_Name: FishSight
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4200605860186177672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428857489462682448}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3664068561369279893}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &3777044923764705115
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428857489462682448}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3499262657012714368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4428857489462682448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bc5c618d5f06af4ea12b4907b8c707b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

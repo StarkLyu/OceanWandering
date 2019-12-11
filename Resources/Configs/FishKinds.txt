@@ -1,0 +1,12 @@
+AngelFish 10
+BackedBlackButterflyFish 10
+BassletFish 10
+BlueYellowFish 10
+ButterflyFish 10
+ClownFish 10
+GreenSeaTurtle 10
+IntFish 10
+Manta 1
+OrangeFish 10
+Stingray 10
+StripedFish 10
